@@ -23,7 +23,7 @@ scaler = StandardScaler()
 
 #data = pd.read_csv(csv_file_path0)
 data = pd.read_csv(csv_file_path1)
-data = data.drop(columns= ['Source'])
+
 
 n_fdim = data.shape[1]
 
@@ -43,10 +43,10 @@ def tune_with_grid_search(features, targets, model):
       #  'max_samples': [0.25, 0.5, 0.75, 0.9],
       #  'max_features': [2,3,4,5]
 # Wind model 
-       'n_estimators': [75, 100, 125, 150, 175, 200, 250, 300,400],
+       'n_estimators': [50, 100, 150, 175, 200],
       # 'learning_rate': [0.01, 0.1, 0.2],
-       'max_depth': [ 3, 4, 7, 8, 9, 10,11, 12,15],
-       'max_samples': [.25, .4, 0.5, 0.75, 0.6, 0.9],
+       'max_depth': [ 2, 3, 4, 7, 8],
+       'max_samples': [.25, 0.5, 0.75, 0.6],
        'max_features': [2,3,4]
     }
 
@@ -178,12 +178,11 @@ best_rf_grid2 = tune_with_grid_search(X, Y, rf_model2)
 
 rmse2_rf, r2_rf2, preds_rf2 = tester(data_test, scaler, best_rf_grid2, n_fdim)
 # %% XGBoost
+
 xgb_model2 = XGBRegressor(random_state=42)
 best_xgb_random2 = tune_with_random_search(X,Y, xgb_model2)
 
 rmse2_xgb, r2_xgb2, preds_xgb2 = tester(data_test, scaler, best_xgb_random2, n_fdim)
-
-
 # %%Print all RMSEs
 
 
@@ -197,10 +196,10 @@ print(f"Extreme Gradient Boosted RMSE: {rmse2_xgb:.2f}")
 
 # %% Save all models
 
-pickle.dump(lr_model1 , open('C:/Users/mizaa/Desktop/Energy Forecasting/models/lr_1_solar.sav', 'wb'))
-pickle.dump(best_rf_grid1 , open('C:/Users/mizaa/Desktop/Energy Forecasting/models/rf_1_solar.sav', 'wb'))
-pickle.dump(best_xgb_random1 , open('C:/Users/mizaa/Desktop/Energy Forecasting/models/xgb_1_solar.sav', 'wb'))
+pickle.dump(lr_model1 , open('C:/Users/mizaa/Desktop/Energy Forecasting/models/lr_1_wind.sav', 'wb'))
+pickle.dump(best_rf_grid1 , open('C:/Users/mizaa/Desktop/Energy Forecasting/models/rf_1_wind.sav', 'wb'))
+pickle.dump(best_xgb_random1 , open('C:/Users/mizaa/Desktop/Energy Forecasting/models/xgb_1_wind.sav', 'wb'))
 
-pickle.dump(lr_model2, open('C:/Users/mizaa/Desktop/Energy Forecasting/models/lr_2_solar.sav', 'wb'))
-pickle.dump(best_rf_grid2, open('C:/Users/mizaa/Desktop/Energy Forecasting/models/rf_2_solar.sav', 'wb'))
-pickle.dump(best_xgb_random2, open('C:/Users/mizaa/Desktop/Energy Forecasting/models/xgb_2_solar.sav', 'wb'))
+pickle.dump(lr_model2, open('C:/Users/mizaa/Desktop/Energy Forecasting/models/lr_2_wind.sav', 'wb'))
+pickle.dump(best_rf_grid2, open('C:/Users/mizaa/Desktop/Energy Forecasting/models/rf_2_wind.sav', 'wb'))
+pickle.dump(best_xgb_random2, open('C:/Users/mizaa/Desktop/Energy Forecasting/models/xgb_2_wind.sav', 'wb'))

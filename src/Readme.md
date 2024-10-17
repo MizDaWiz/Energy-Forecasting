@@ -4,8 +4,10 @@ This file checks for duplicates and null values and performs encoding for catego
 # EDA
 This file helps visualize the data and look for any improvements we can make before we train on the dataset. 
 
-##Variation of Y with all features since they are limited
+## Variation of Y with all features since they are limited
 I first looked at the basic statistics of every feature in the dataset and the boxplot of the target values in buckets of the sources which gave the inference that there is a large difference in the production when we look at both sources 
+
+![image](https://github.com/user-attachments/assets/0cf71068-3381-4986-9004-ad822f948acd)
 
 **img 
 

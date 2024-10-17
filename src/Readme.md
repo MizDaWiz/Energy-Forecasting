@@ -76,7 +76,12 @@ I then observed the correlation matrix of production with features for both sour
 
 
 # Baseline Models
-We train some standard machine learning models to get a baseline for model performance
+We train some standard machine learning models to get a baseline for model performance: <br/>
+1. Linear Regressor <br/>
+2. Random Forest Regressor <br/>
+3. XGB Regressor <br/>
+
+XGB gave the best RMSE of about 300 for solar and 100 for wind which was 10% of the standard deviation in the data for either source. However, the R2 score was very unstable when we were using normalized data
 
 # LSTM 
-We implement an LSTM for our prediction tasks to get the best model performance. I found that sequence length 6 was best which was in line with my expectation due to the nature of the hourly production graph 
+We implement an LSTM for our prediction tasks to get the best model performance. I found that sequence length 6 was best which was in line with my expectation due to the nature of the hourly production graph. The RMSE showed a 10% improvement here and A stable R2 score of 0.9 was achieved

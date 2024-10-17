@@ -8,8 +8,7 @@ This file helps visualize the data and look for any improvements we can make bef
 I first looked at the basic statistics of every feature in the dataset and the boxplot of the target values in buckets of the sources which gave the inference that there is a large difference in the production when we look at both sources 
 
 ![image](https://github.com/user-attachments/assets/0cf71068-3381-4986-9004-ad822f948acd)
-
-**img 
+ 
 
 Then I plotted the histogram of production values for both sources:
 
@@ -38,6 +37,9 @@ Production greater than 7500
 
 This led me to the conclusion that I would benefit from using two different models when classifying the wind dataset and when classifying the solar dataset due to the large order of magnitude difference and the seasonanility in solar data which is absent in wind data that I will see further ahead <br/>
 
+![image](https://github.com/user-attachments/assets/4535b05e-dab6-45a5-909b-954068df22fe)
+
+
 From the number of observations we had in each year, to plot the Monthly, Daily and Hourly production, I only considered 2021 and 2022 for homogenity 
 
 ### Monthly Production:
@@ -63,9 +65,15 @@ With these observations, I decided to add 2 new features as sin functions for ho
 
 I then observed the correlation matrix of both features and eliminated those with <5% correlation or repeats and exported the data to 2 new datasets for wind and solar <br/>
 
+### For Solar: 
+<img width="148" alt="image" src="https://github.com/user-attachments/assets/42044a85-1f57-485d-97fc-3358d14eca78">
+
+### For Wind: 
+<img width="146" alt="image" src="https://github.com/user-attachments/assets/0cf76c53-061a-468e-8cc6-f76e8c071681">
+
 
 # Baseline Models
 We train some standard machine learning models to get a baseline for model performance
 
 # LSTM 
-We implement an LSTM for our prediction tasks to get the best model performance
+We implement an LSTM for our prediction tasks to get the best model performance. I found that sequence length 6 was best which was in line with my expectation due to the nature of the hourly production graph 

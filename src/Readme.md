@@ -51,12 +51,15 @@ From the number of observations we had in each year, to plot the Monthly, Daily 
 
 ![image](https://github.com/user-attachments/assets/3cc0417f-e751-4f79-b95b-bb52429cc67b)
 
+### Hourly Production: 
 
-Solar Production closely resembles a gaussian curve with respect to
+![image](https://github.com/user-attachments/assets/5fc4f827-f00c-4c66-8f1d-be46845886dd)
+
+Solar Production values closely resembles a gaussian curve with respect to
 months and with respect to hours between 6 to 21 (almost like a sine
 function)  <br/>
 
-Wind Production also shows a gaussian curve if we consider the cycle to
+Wind Production also shows a gaussian-like curve shape if we consider the cycle to
 be from month 6 to month 5 or hours from 10hrs to 9 hrs <br/>
 
 There is a difference in behavior of the variation of production with features when the sources changes <br/>

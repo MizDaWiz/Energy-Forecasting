@@ -1,11 +1,10 @@
-# Source Code
-
-## Cleaning
+# Cleaning
 This file checks for duplicates and null values and performs encoding for categorical features. There were 2 entries where we did not have the target values so I discarded them. I also checked for 0's in the features and found that production was 0 in 4543 rows(10% of the dataset). This led to the obvious observation that solar energy produced between sunset and sunrise is 0 or close to 0 [Hours 18 and 4]
 
-## EDA
+# EDA
 This file helps visualize the data and look for any improvements we can make before we train on the dataset. 
 
+##Variation of Y with all features since they are limited
 I first looked at the basic statistics of every feature in the dataset and the boxplot of the target values in buckets of the sources which gave the inference that there is a large difference in the production when we look at both sources 
 
 **img 
@@ -44,10 +43,8 @@ So I added 2 new features as sin functions for hour and month which cover a pi i
 I then observed the correlation matrix of both features and eliminated those with <5% correlation or repeats and exported the data to 2 new datasets for wind and solar 
 
 
-
-
-## Baseline Models
+# Baseline Models
 We train some standard machine learning models to get a baseline for model performance
 
-## LSTM 
+# LSTM 
 We implement an LSTM for our prediction tasks to get the best model performance

@@ -66,7 +66,7 @@ There is a difference in behavior of the variation of production with features w
 
 With these observations, I decided to add 2 new features as sin functions for hour and month which cover a pi interval across the range of those values and concluded that I should use two different models to predict energy for either source<br/>
 
-I then observed the correlation matrix of both features and eliminated those with <5% correlation or repeats and exported the data to 2 new datasets for wind and solar <br/>
+I then observed the correlation matrix of production with features for both sources separately and eliminated features with <5% correlation and exported the data to 2 new datasets for wind and solar <br/>
 
 ### For Solar: 
 <img width="148" alt="image" src="https://github.com/user-attachments/assets/42044a85-1f57-485d-97fc-3358d14eca78">

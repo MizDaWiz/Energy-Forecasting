@@ -13,36 +13,55 @@ I first looked at the basic statistics of every feature in the dataset and the b
 
 Then I plotted the histogram of production values for both sources:
 
-Solar:
+### Solar:<br/>
 
-Wind:
+For Production < 5 (Because that is 50% of all values as we can see)
+![image](https://github.com/user-attachments/assets/105563eb-1e74-40fa-bf9a-18780872ae10)
 
-This led me to the conclusion that I would benefit from using two different models when classifying the wind dataset and when classifying the solar dataset due to the large order of magnitude difference and the seasonanility in solar data which is absent in wind data that I will see further ahead 
+Production between 5 and 200
+
+![image](https://github.com/user-attachments/assets/78da4647-f2f3-4c68-bb49-acd6ac1bb79b)
+
+Production greater than 200
+
+![image](https://github.com/user-attachments/assets/cdd401d9-0c17-47a3-9581-fac613755323)
+
+### Wind:
+
+Production less than 7500
+
+![image](https://github.com/user-attachments/assets/b35dbe8a-f9f6-4f38-9528-6a109dd33b3a)
+
+Production greater than 7500
+
+![image](https://github.com/user-attachments/assets/b43c425d-b482-436e-9a31-63733a25982f)
+
+This led me to the conclusion that I would benefit from using two different models when classifying the wind dataset and when classifying the solar dataset due to the large order of magnitude difference and the seasonanility in solar data which is absent in wind data that I will see further ahead <br/>
 
 From the number of observations we had in each year, to plot the Monthly, Daily and Hourly production, I only considered 2021 and 2022 for homogenity 
 
-Yearly Production:
+### Monthly Production:
 
-**img 
-Monthly Production:
+![image](https://github.com/user-attachments/assets/72b80adb-e9e4-444e-9cc5-545a60dba441)
 
-**img
-Daily Production:
 
-**img
+### Daily Production:
+
+![image](https://github.com/user-attachments/assets/3cc0417f-e751-4f79-b95b-bb52429cc67b)
+
 
 Solar Production closely resembles a gaussian curve with respect to
 months and with respect to hours between 6 to 21 (almost like a sine
-function)  
+function)  <br/>
 
 Wind Production also shows a gaussian curve if we consider the cycle to
-be from month 6 to month 5 or hours from 10hrs to 9 hrs
+be from month 6 to month 5 or hours from 10hrs to 9 hrs <br/>
 
-There is a difference in behavior of the variation of production with features when the sources changes 
+There is a difference in behavior of the variation of production with features when the sources changes <br/>
 
-So I added 2 new features as sin functions for hour and month which cover a pi interval across the range of those values and concluded that I should use two different models to predict energy for either source
+With these observations, I decided to add 2 new features as sin functions for hour and month which cover a pi interval across the range of those values and concluded that I should use two different models to predict energy for either source<br/>
 
-I then observed the correlation matrix of both features and eliminated those with <5% correlation or repeats and exported the data to 2 new datasets for wind and solar 
+I then observed the correlation matrix of both features and eliminated those with <5% correlation or repeats and exported the data to 2 new datasets for wind and solar <br/>
 
 
 # Baseline Models
